@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ .nav-tabs li {
+  padding: 1em;
+}
+
+.pull-right {
+  float: right !important;
+}
