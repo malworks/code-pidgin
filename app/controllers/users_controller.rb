@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+     @user = User.find(params[:id])
+     @articles = @user.articles.visible_to(current_user)
+   end
 
   def new
     @user = User.new
@@ -12,7 +16,7 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
 
     if @user.save
-      flash[:notice] = "Welcome to Bloccit #{@user.name}!"
+      flash[:notice] = "Welcome to Code Pidgin #{@user.name}!"
       create_session(@user)
       redirect_to root_path
     else
