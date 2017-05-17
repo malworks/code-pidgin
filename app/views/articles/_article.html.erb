@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-body">
+     <h4 class="media-heading">
+       <%= link_to article.title, section_article_path(article.section, article) %>
+    </h4>
+    <small>
+      submitted <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.name %> <br>
+      <%= article.comments.count %> Comments
+    </small>
+  </div>
+</div>

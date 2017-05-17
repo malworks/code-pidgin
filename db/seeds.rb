@@ -23,7 +23,9 @@ users = User.all
      user: users.sample,
      title:  Faker::Hipster.sentence,
      body: Faker::Hipster.sentence,
-     # approved: true
+     published: true,
+     favorite: false,
+     section_id: rand(1..12)
    )
  end
  articles = Article.all
