@@ -43,7 +43,7 @@ user = User.first
 user.update_attributes!(
   name: 'Mallory',
   email: 'malloryworks@gmail.com',
-  password_digest: 'password',
+  password: 'password',
   # role: 'admin'
 )
 
