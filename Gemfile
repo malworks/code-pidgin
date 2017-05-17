@@ -26,6 +26,7 @@ gem 'figaro'
 gem 'listen'
 gem 'devise'
 gem 'mailcatcher'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'
