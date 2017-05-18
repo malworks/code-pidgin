@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # before_action :authorize_user, except: [:show, :new, :create]
 
   def index
     @articles = Article.all
@@ -20,6 +21,13 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
+
+    if @article.user.role == "standard"
+     @article.published = 'false'
+   else
+     @article.published = 'true'
+   end
 
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
@@ -43,6 +51,8 @@ class ArticlesController < ApplicationController
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -51,6 +61,15 @@ class ArticlesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :user_id, :body)
+      params.require(:article).permit(:title, :user_id, :section_id, :body)
     end
+
+# this is throwing an error.
+    #def authorize_user
+      #article = Article.find(params[:id])
+
+      ##flash[:alert] = "You must be an admin to do that."
+        #redirect_to [article.section, article]
+      #end
+  #  end
 end

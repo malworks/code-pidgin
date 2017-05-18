@@ -45,7 +45,7 @@ user.update_attributes!(
   name: 'Mallory',
   email: 'malloryworks@gmail.com',
   password: 'password',
-  # role: 'admin'
+  role: 'admin'
 )
 
  puts "Seed finished"
