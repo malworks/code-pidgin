@@ -15,6 +15,9 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <% if !article.published %>
+          <td> NEEDS APPROVAL </td>
+        <% end %>
         <td><%= article.title %></td>
         <td><%= article.user_id %></td>
         <td><%= article.body %></td>

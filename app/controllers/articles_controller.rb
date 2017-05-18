@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  # before_action :authorize_user, except: [:show, :new, :create]
+  before_action :authorize_user, except: [:show, :new, :create]
+
+
 
   def index
     @articles = Article.all
@@ -64,12 +66,10 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :user_id, :section_id, :body)
     end
 
-# this is throwing an error.
-    #def authorize_user
-      #article = Article.find(params[:id])
-
-      ##flash[:alert] = "You must be an admin to do that."
-        #redirect_to [article.section, article]
-      #end
-  #  end
+    def authorize_user
+      unless current_user.admin?
+        flash[:alert] = "You must be an admin to do that."
+        redirect_to sections_path
+      end
+    end
 end
