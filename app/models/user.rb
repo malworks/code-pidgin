@@ -2,6 +2,7 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase if email.present? }
 
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # validates minimum length for name
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true

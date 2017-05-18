@@ -34,6 +34,7 @@ users = User.all
    Comment.create!(
      # user: users.sample,
      article_id: rand(1..50),
+     user: users.sample,
      body: Faker::Hipster.sentence
    )
  end
