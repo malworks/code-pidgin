@@ -19,4 +19,10 @@
  <h2>Comments</h2>
  <%= user_comments_if_any(@user.comments) %>
 
- <h2>Favorites</h2>
+ <h2>Awaiting Approval</h2>
+ <% @articles.each do |article| %>
+   <tr>
+     <% if !article.published %>
+       <td> <% @user.articles %> </td>
+     <% end %>
+  <% end %>
