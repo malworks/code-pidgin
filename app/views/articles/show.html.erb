@@ -20,10 +20,11 @@
   <%= @article.user_id %>
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+  <p><%= markdown(@article.body) %></p>
+  <small>
+    submitted by <%= @article.user.name %> <br>
+  </small>
+</div>
 
 <% if current_user %>
        <%= render partial: 'favorites/favorites', locals: { article: @article } %>
