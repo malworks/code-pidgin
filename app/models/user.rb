@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :articles
 
   # validates minimum length for name
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true

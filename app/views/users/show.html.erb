@@ -1,8 +1,22 @@
 
+<div class="row">
+   <div class="col-md-8">
+     <div class="media">
+       <br />
+       <div class="media-body">
+         <h2 class="media-heading"><%= @user.name %></h2>
+         <small>
+           <%= pluralize(@user.articles.count, 'article') %>,
+           <%= pluralize(@user.comments.count, 'comment') %>
+         </small>
+       </div>
+     </div>
+   </div>
+ </div>
+ <h2>Posts</h2>
+ <%= user_articles_if_any(@user.articles) %>
 
-// #14
-<h2>Posts</h2>
-<%= render @user.articles %>
+ <h2>Comments</h2>
+ <%= user_comments_if_any(@user.comments) %>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+ <h2>Favorites</h2>
