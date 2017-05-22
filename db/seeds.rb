@@ -11,7 +11,7 @@ users = User.all
  # Create Sections
  12.times do
    section = Section.create!(
-     name:  Faker::Hipster.sentence,
+     name:  Faker::Hipster.word,
      description: Faker::Hipster.sentence,
    )
  end
