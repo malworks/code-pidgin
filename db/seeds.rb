@@ -24,7 +24,6 @@ users = User.all
      title:  Faker::Hipster.sentence,
      body: Faker::Hipster.sentence,
      published: true,
-     favorite: false,
      section_id: rand(1..12)
    )
  end
@@ -50,6 +49,6 @@ user.update_attributes!(
 
  puts "Seed finished"
  puts "#{User.count} users created"
- puts "#{Section.count} wikis created"
+ puts "#{Section.count} sections created"
  puts "#{Article.count} tags created"
  puts "#{Comment.count} comments created"

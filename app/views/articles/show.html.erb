@@ -32,7 +32,7 @@
      <% end %>
 
 <% if !@article.published && current_user.role == 'admin' %>
-  <%= link_to "Approve the thing", article_path(published: true), method: :put %>
+  <%= link_to "Approve the thing", article_path(article: {published: true}), method: :put %>
 <% end %>
 
 

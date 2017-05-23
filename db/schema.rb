@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170518002311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "published"
-    t.boolean  "favorite"
     t.integer  "section_id"
     t.index ["section_id"], name: "index_articles_on_section_id"
     t.index ["user_id"], name: "index_articles_on_user_id"

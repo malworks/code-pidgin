@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   def show
      @user = User.find(params[:id])
      @articles = @user.articles#.visible_to(current_user)
-   end
+     @unpublished_articles = @articles.where(published: false)
+     @published_articles = @articles.where(published: true)
+     @favorited_articles = @user.favorited_articles
+
+  end
 
   def new
     @user = User.new
