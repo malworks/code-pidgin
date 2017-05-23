@@ -1,10 +1,15 @@
 <div class="section-show-card">
-     <h3>
-       <%= link_to article.title, section_article_path(article.section, article) %>
-    </h3>
-    <small>
-      submitted <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.name %> <br>
-      <%= article.comments.count %> Comments
-    </small>
-  <!-- </div> -->
+  <small>
+    <%= link_to article.user.name, user_path(article.user_id) %> in <% @section_name %> Section Title <br />
+    Published <%= time_ago_in_words(article.created_at) %> ago
+  </small>
+  <h3>
+    <%= link_to article.title, section_article_path(article.section, article) %>
+  </h3>
+  <p>
+    <%= truncate(article.body, length: 400, separator: ' ') %>
+  </p>
+  <small>
+    <%= article.comments.count %> Comments
+  </small>
 </div>
