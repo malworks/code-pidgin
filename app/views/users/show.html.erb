@@ -4,7 +4,7 @@
      <div class="media">
        <br />
        <div class="media-body">
-         <h2 class="media-heading"><%= @user.name %></h2>
+         <h1 class="media-heading"><%= @user.name %></h1>
          <small>
            <%= pluralize(@user.articles.count, 'article') %>,
            <%= pluralize(@user.comments.count, 'comment') %>
@@ -13,16 +13,17 @@
      </div>
    </div>
  </div>
- <h2>Posts</h2>
+ <h3>Published Articles</h3>
  <%= user_articles_if_any(@user.articles) %>
 
- <h2>Comments</h2>
- <%= user_comments_if_any(@user.comments) %>
-
- <h2>Awaiting Approval</h2>
+ <h3>Articles Awaiting Approval</h3>
  <% @articles.each do |article| %>
    <tr>
      <% if !article.published %>
        <td> <% @user.articles %> </td>
      <% end %>
   <% end %>
+
+  <h3>Private Articles</h3>
+
+  <h3>Favorite Articles</h3>
