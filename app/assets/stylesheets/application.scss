@@ -37,6 +37,7 @@
 h1, h3 {
   font-family: "lato";
   color: #46385b;
+  padding: 0.25em 0 0.25em 0;
   }
 
   a:link {
@@ -49,4 +50,10 @@ a:visited {
 
 a:hover {
     color: #519498;
+}
+
+p, ol, ul, td {
+  font-family: "lato", helvetica, verdana, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
 }

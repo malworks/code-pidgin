@@ -1,5 +1,7 @@
-<div class="section-show-card">
+
+  <div class="section-show-card">
   <small>
+    <%= image_tag article.user.avatar_url(48), class: "gravatar" %>
     <%= link_to article.user.name, user_path(article.user_id) %> in <% @section_name %> Section Title <br />
     Published <%= time_ago_in_words(article.created_at) %> ago
   </small>
@@ -10,6 +12,16 @@
     <%= truncate(article.body, length: 400, separator: ' ') %>
   </p>
   <small>
-    <%= article.comments.count %> Comments
+    <div class="favorite">
+      <% if favorite = current_user.favorite_for(article) %>
+        <%= link_to [article, favorite], method: :delete do %>
+          <i class="fa fa-star" aria-hidden="true"></i> Unfavorite
+        <% end %>
+      <% else %>
+        <%= link_to [article, Favorite.new], method: :post do %>
+          <i class="fa fa-star-o" aria-hidden="true"></i> Favorite
+        <% end %>
+      <% end %>
+    </div>
   </small>
-</div>
+  </div>
