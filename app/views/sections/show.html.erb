@@ -1,7 +1,8 @@
 <h1><%= @section.name %></h1>
 
-<div class="section-show-container">
+<%= link_to "Back to Sections", sections_path %>
+  <div class="section-show-container">
     <% @section.articles.each do |article| %>
       <%= render partial: 'articles/article', locals: { article: article } %>
     <% end %>
-  </div>
+</div>
