@@ -17,6 +17,31 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+ html {
+   box-sizing: border-box;
+   font-size: 16px;
+ }
+
+ body {
+   margin: 0;
+ }
+
+ #layout {
+   min-height: 100vh;
+   flex-flow: column nowrap;
+ }
+
+ .container > * {
+   color: #333;
+   border: 1px solid red;
+   border-radius: 2px;
+   justify-content: space-between;
+   flex: 1 1 0%;
+ }
+
+ #footer ul {
+   justify-content: flex-start;
+ }
 
  .nav-tabs li {
   padding: 1em;
@@ -28,10 +53,12 @@
 
 .nav {
   margin-top: 5px;
+  justify-content: space-between;
 }
 
 .pull-right {
   float: right !important;
+  position: relative;
 }
 
 h1, h3 {
