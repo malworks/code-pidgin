@@ -63,12 +63,14 @@
 
 .nav {
   margin-top: 5px;
-  justify-content: space-between;
+  justify-content:flex-start;
+  align-items: center;
 }
 
 .pull-right {
-  float: right !important;
-  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5px;
 }
 
 h1, h3 {
