@@ -11,17 +11,14 @@
     <header id="header">
       <div class="container">
           <ul class="nav nav-tabs">
-            <li><%= link_to( image_tag("logo.gif"), image_path( welcome_index_path ) ) %></li>
-            <li><%= link_to "Code Pidgin", welcome_index_path %></li>
+            <li><%= link_to( image_tag("logo2.png"), image_path( welcome_index_path ) ) %></li>
             <li><%= link_to "Sections", sections_path %></li>
             <li><%= link_to "About", welcome_about_path %></li>
 
             <div class="pull-right">
               <li><% if current_user %>
                 <%= image_tag current_user.avatar_url(48), class: "gravatar" %>
-                  <div class="pull-right">
                     <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Sign Out", session_path(current_user), method: :delete %>
-                  </div>
               <% else %>
                 <%= link_to "Sign In", new_session_path %> or
                 <%= link_to "Sign Up", new_user_path %></li>
