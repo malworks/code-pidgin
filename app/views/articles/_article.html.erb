@@ -13,7 +13,7 @@
   </p>
   <small>
     <div class="favorite">
-      <% if favorite = current_user.favorite_for(article) %>
+      <% if current_user && favorite = current_user.favorite_for(article) %>
         <%= link_to [article, favorite], method: :delete do %>
           <i class="fa fa-star" aria-hidden="true"></i> Unfavorite
         <% end %>
