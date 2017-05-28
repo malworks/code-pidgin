@@ -13,19 +13,22 @@
      </div>
    </div>
  </div>
- <h3>Published Articles</h3>
- <% @published_articles.each do |article| %>
-   <%= render partial: 'articles/article', locals: { article: article } %>
-<% end %>
 
- <h3>Articles Awaiting Approval</h3>
- <% @unpublished_articles.each do |article| %>
-   <%= render partial: 'articles/article', locals: { article: article } %>
-<% end %>
+<div class="margin-bottom">
+  <h3>Published Articles</h3>
+    <% @published_articles.each do |article| %>
+      <%= render partial: 'articles/article', locals: { article: article } %>
+    <% end %>
+
+  <h3>Articles Awaiting Approval</h3>
+    <% @unpublished_articles.each do |article| %>
+      <%= render partial: 'articles/article', locals: { article: article } %>
+    <% end %>
 
   <h3>Private Articles</h3>
 
   <h3>Favorite Articles</h3>
-  <% @favorited_articles.each do |article| %>
-    <%= render partial: 'articles/article', locals: { article: article } %>
- <% end %>
+    <% @favorited_articles.each do |article| %>
+      <%= render partial: 'articles/article', locals: { article: article } %>
+    <% end %>
+</div>
