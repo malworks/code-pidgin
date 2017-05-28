@@ -1,32 +1,59 @@
-<%= form_for(article) do |f| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="article">
 
-      <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="article-column">
+    <small>Good titles are concise and summarize the article.</small><br />
+    <small>Don't see your section? Email us!</small><br />
+    <small>Code Pidgin uses markdown <br />
+    ### H3<br />
+    #### H4<br />
+    _emphasis_<br />
+    **bold**<br />
+    `code`<br />
+    [Link title](Link URL)<br />
+    </small>
+    <small>Private articles do not ned to be approved, and will only be visible to you.</small>
+  </div>
+
+  <div class="article-column">
+    <%= form_for(article) do |f| %>
+      <% if article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+          <ul>
+          <% article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="form-group">
-    <label for="title">Title</label>
-    <%= f.text_field :title, class: "form-group form-control" %>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <%= f.text_field :title, class: "form-group form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label for="Section">Section</label>
+        <%= f.collection_select :section_id, Section.all, :id, :name, {prompt: true}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <label for="body">Body</label>
+        <%= f.text_area :body, class: 'form-control', rows: "10" %>
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input">
+          Private?
+        </label>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Submit ", :class => 'btn btn-lg' %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="form-group">
-    <label for="Section">Section</label>
-    <%= f.collection_select :section_id, Section.all, :id, :name, {prompt: true}, {class: "form-control"} %>
-  </div>
-
-  <div class="form-group">
-    <label for="body">Body</label>
-    <%= f.text_area :body, class: 'form-control', rows: "10" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit nil, :class => 'btn-primary btn' %>
-  </div>
-<% end %>
+</div>

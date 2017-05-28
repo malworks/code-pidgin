@@ -6,3 +6,30 @@
   position: relative;
   float: right;
 }
+
+.btn-lg {
+  width: 100%;
+  background-color: #519498;
+  color: #ebe9df;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.article {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 4em;
+  justify-content: flex-start !important;
+  border: 1px solid blue;
+  flex: 1 1 auto;
+}
+
+.article-column {
+  margin: 0 ;
+  border: 1px solid blue;
+}
+
+.article div:nth-child(2) {
+    flex-grow: 5;
+  }
