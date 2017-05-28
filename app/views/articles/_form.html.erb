@@ -6,7 +6,7 @@
     </p>
 
     <p class="padding">
-      Don't see your section? Email us!
+      Don't see your section? <%= mail_to "malloryworks@gmail.com", "Email us!", class: "link-style" %>
     </p>
     <p class="padding">
       Code Pidgin uses markdown: <br />
@@ -59,7 +59,7 @@
         </label>
       </div>
 
-      <div class="form-group">
+      <div class="form-group margin-top">
         <%= f.submit "Submit ", :class => 'btn btn-lg' %>
       </div>
     <% end %>
