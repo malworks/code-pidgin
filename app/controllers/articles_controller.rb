@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @unpublished_articles = @articles.where(published: false)
   end
 
   def show

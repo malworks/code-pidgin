@@ -1,0 +1,19 @@
+
+  <div class="section-show-card">
+  <small>
+    <%= image_tag article.user.avatar_url(48), class: "gravatar" %>
+    <%= link_to article.user.name, user_path(article.user_id) %> in <% @section_name %> Section Title <br />
+    Published <%= time_ago_in_words(article.created_at) %> ago
+  </small>
+  <h3>
+    <%= link_to article.title, section_article_path(article.section, article) %>
+  </h3>
+  <p>
+    <%= markdown(truncate(article.body, length: 400, separator: ' ')) %>
+  </p>
+    <div class="favorite">
+        <%= link_to section_article_path(article: {published: true}), method: :put do %>
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Approve
+        <% end %>
+    </div>
+  </div>
