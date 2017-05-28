@@ -17,16 +17,6 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
- *{
- 	margin: 0;
- 	padding: 0;
- }
-
- html, body {
-   font-size: 16px;
-   min-height: 100%;
-   min-width: 100%;
- }
 
  #layout {
    min-height: 100vh;
@@ -44,7 +34,7 @@
 
  .container > * {
    color: #333;
-   border: 1px solid red;
+   //border: 1px solid red;
    border-radius: 2px;
    justify-content: space-between;
    flex: 1 1 0%;
@@ -73,27 +63,6 @@
   float: right;
 }
 
-
-h1, h3 {
-  font-family: "lato";
-  color: #46385b;
-  padding: 0.25em 0 0.25em 0;
-  }
-
-  a:link {
-    color: #46385b;
-}
-
-a:visited {
-  color: #46385b;
-}
-
-a:hover {
-    color: #519498;
-}
-
-p, ol, ul, td {
-  font-family: "lato", helvetica, verdana, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
+.container a {
+  text-decoration: none;
 }
