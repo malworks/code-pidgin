@@ -9,7 +9,7 @@
     <%= link_to article.title, section_article_path(article.section, article) %>
   </h3>
   <p>
-    <%= truncate(article.body, length: 400, separator: ' ') %>
+    <%= markdown(truncate(article.body, length: 400, separator: ' ')) %>
   </p>
   <small>
     <div class="favorite">
