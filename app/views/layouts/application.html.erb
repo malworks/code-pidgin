@@ -8,31 +8,35 @@
   <%= csrf_meta_tags %>
 </head>
   <body id="layout">
-    <header id="header">
+    <header id="header" class="header">
       <div class="container">
-          <ul class="nav nav-tabs">
+        <div class="menu">
+          <ul class="nav">
             <li><%= link_to( image_tag("logo2.png"), image_path( welcome_index_path ) ) %></li>
             <li><%= link_to "Sections", sections_path %></li>
             <li><%= link_to "About", welcome_about_path %></li>
+          </ul>
+        </div>
 
-            <div class="pull-right">
-              <li><% if current_user %>
-                <%= image_tag current_user.avatar_url(48), class: "gravatar" %>
+        <div class="menu">
+          <ul class="nav">
+            <li><% if current_user %>
+              <%= image_tag current_user.avatar_url(48), class: "gravatar" %>
                     <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Sign Out", session_path(current_user), method: :delete %>
               <% else %>
                 <%= link_to "Sign In", new_session_path %> or
                 <%= link_to "Sign Up", new_user_path %></li>
              <% end %>
-           </div>
-          </ul>
+         </ul>
         </div>
+      </div>
       </header>
     <div class="container">
       <%= yield %>
     </div>
     <footer id="footer">
       <div class="container">
-        <ul class="nav nav-tabs">
+        <ul class="nav">
           <li><%= link_to "", welcome_about_path, :class => "fa fa-github" %></li>
           <li><%= link_to "", welcome_about_path, :class => "fa fa-twitter-square" %></li>
           <li><%= link_to "", welcome_about_path, :class => "fa fa-facebook-square" %></li>
