@@ -31,7 +31,6 @@
         </div>
       </div>
       </header>
-    <div class="container">
 
       <% if flash[:notice] %>
        <div class="alert alert-success">
@@ -44,9 +43,9 @@
          <%= flash[:alert] %>
        </div>
      <% end %>
-     
+
       <%= yield %>
-    </div>
+
     <footer id="footer">
       <div class="container">
         <ul class="nav">

@@ -26,9 +26,9 @@
    flex-flow: column nowrap;
  }
 
- #header, #footer {
-   background-color: #271625;
-   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#header {
+   background-color: rgba(39, 22, 37, 1);
+   box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
  #header ul, #header a {
@@ -41,7 +41,7 @@
    border-radius: 2px;
    justify-content: space-between;
    flex: 1 1 0%;
-   height: 100%
+   height: 100%;
  }
 
  #footer ul {
@@ -71,11 +71,11 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   flex: 1 1 0%;
+  width: 100%;
 }
 
 .menu {
   margin: 0;
-  //border: 1px solid blue;
   display: inline-block;
 }
 
@@ -90,6 +90,7 @@
   width: 100%;
   height: 60px;
   overflow: hidden;
+  border: 1px solid red;
 }
 
 h1, .margin-top {
