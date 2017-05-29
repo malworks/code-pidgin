@@ -5,7 +5,7 @@
     <%= link_to article.user.name, user_path(article.user_id) %> in <% @section_name %> Section Title <br />
     Published <%= time_ago_in_words(article.created_at) %> ago
   </small>
-  <h3>
+  <h3 class="clear margin-top">
     <%= link_to article.title, section_article_path(article.section, article) %>
   </h3>
   <p>

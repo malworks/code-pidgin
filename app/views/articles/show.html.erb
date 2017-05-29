@@ -1,52 +1,38 @@
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @article.section_id %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @article.published %>
-</p>
-
-
-<p>
-  <strong>User:</strong>
-  <%= @article.user_id %>
-</p>
-
-  <p><%= markdown(@article.body) %></p>
+<div class="section-show-card margin-top margin-bottom">
   <small>
-    submitted by <%= @article.user.name %> <br>
+    <%= image_tag @article.user.avatar_url(48), class: "gravatar" %>
+    <%= link_to @article.user.name, user_path(@article.user_id) %> in <% @section_name %> Section Title <br />
+    Published <%= time_ago_in_words(@article.created_at) %> ago
   </small>
+  <h3 class="margin-top clear">
+    <%= @article.title %>
+  </h3>
+  <p>
+    <%= markdown(@article.body) %>
+  </p>
+  <small>
+    <div class="favorite">
+      <% if current_user && favorite = current_user.favorite_for(@article) %>
+        <%= link_to [@article, favorite], method: :delete do %>
+          <i class="fa fa-star" aria-hidden="true"></i> Unfavorite
+        <% end %>
+      <% else %>
+        <%= link_to [@article, Favorite.new], method: :post do %>
+          <i class="fa fa-star-o" aria-hidden="true"></i> Favorite
+        <% end %>
+      <% end %>
+    </div>
+  </small>
+
+<div class="margin-top">
+  <h3>Comments</h3>
+    <%= render @article.comments %>
+      <% if current_user %>
+        <%= render 'comments/form', comment: Comment.new, article: @article %>
+      <% end %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
 </div>
 
-<% if current_user %>
-       <%= render partial: 'favorites/favorites', locals: { article: @article } %>
-     <% end %>
-
-<% if !@article.published && current_user.role == 'admin' %>
-  <%= link_to "Approve the thing", article_path(article: {published: true}), method: :put %>
-<% end %>
-
-<% if !@article.published && current_user.role == 'admin' %>
-  <%= link_to article_path(article: {published: true}), method: :post do %>
-    <i class="fa fa-star-o" aria-hidden="true"></i> Approve
-  <% end %>
-<% end %>
-
-
-<h3>Comments</h3>
-	<%= render @article.comments %>
-
-    <% if current_user %>
-			<%= render 'comments/form', comment: Comment.new, article: @article %>
-		<% end %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</div>

@@ -16,6 +16,16 @@
   font-size: 2em;
 }
 
+.btn-md {
+  width: 25%;
+  background-color: #519498;
+  color: #ebe9df;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+  float: right;
+}
+
 .article {
   display: flex;
   flex-flow: row wrap;
