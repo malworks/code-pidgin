@@ -9,8 +9,7 @@ class FavoritesController < ApplicationController
     else
       flash[:alert] = "Favoriting failed."
     end
-
-  redirect_to [article.section, article]
+    redirect_to :back
   end
 
   def destroy
@@ -22,6 +21,6 @@ class FavoritesController < ApplicationController
     else
       flash[:alert] = "Unfavoriting failed."
     end
-    redirect_to [article.section, article]
+    redirect_to :back
   end
 end

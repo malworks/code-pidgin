@@ -9,7 +9,6 @@ class SectionsController < ApplicationController
 
 	def show
 		@section = Section.find(params[:id])
-
     @published_articles = @section.articles.where(published: true)
 	end
 
