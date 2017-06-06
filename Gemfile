@@ -9,9 +9,9 @@ group :production do
 end
 
 group :development do
-  # gem 'sqlite3'
-  # gem 'pry'
-  # gem 'web-console', '~> 2.0'
+  gem 'sqlite3'
+  gem 'pry'
+  gem 'web-console', '~> 2.0'
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -25,17 +25,11 @@ gem 'font-awesome-sass'
 gem 'figaro'
 gem 'listen'
 gem 'devise'
-gem 'mailcatcher'
 gem 'bcrypt'
 gem 'redcarpet'
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'pry'
-  gem 'web-console', '~> 2.0'
-
-
-  
+  gem 'mailcatcher'
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
