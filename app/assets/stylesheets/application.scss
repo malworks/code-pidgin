@@ -109,3 +109,8 @@ h1, .margin-top {
 h1, h3, h5 {
   color: #46385b;
 }
+
+.nav li:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
