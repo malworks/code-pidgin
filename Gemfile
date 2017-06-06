@@ -30,6 +30,12 @@ gem 'bcrypt'
 gem 'redcarpet'
 
 group :development, :test do
+  gem 'sqlite3'
+  gem 'pry'
+  gem 'web-console', '~> 2.0'
+
+
+  
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
