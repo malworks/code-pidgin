@@ -25,11 +25,11 @@ gem 'font-awesome-sass'
 gem 'figaro'
 gem 'listen'
 gem 'devise'
-gem 'mailcatcher'
 gem 'bcrypt'
 gem 'redcarpet'
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
