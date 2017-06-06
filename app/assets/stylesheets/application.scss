@@ -110,7 +110,36 @@ h1, h3, h5 {
   color: #46385b;
 }
 
-.nav li:nth-child(2) {
+.code-pidgin-title {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #362535;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #519498}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
