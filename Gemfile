@@ -9,9 +9,9 @@ group :production do
 end
 
 group :development do
-  gem 'sqlite3'
-  gem 'pry'
-  gem 'web-console', '~> 2.0'
+  # gem 'sqlite3'
+  # gem 'pry'
+  # gem 'web-console', '~> 2.0'
 end
 
 gem 'sass-rails', '~> 5.0'
