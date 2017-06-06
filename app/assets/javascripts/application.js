@@ -15,6 +15,3 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
-<script src="https://use.typekit.net/cyv3smk.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
