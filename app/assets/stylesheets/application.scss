@@ -29,6 +29,8 @@
 #header {
    background-color: rgba(39, 22, 37, 1);
    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   position: relative;
+   z-index: 100;
  }
 
  #header ul, #header a {
@@ -91,6 +93,8 @@
   height: 60px;
   overflow: hidden;
   border: 1px solid red;
+  z-index: 101;
+  background-color: #ffffff;
 }
 
 h1, .margin-top {
@@ -104,4 +108,38 @@ h1, .margin-top {
 
 h1, h3, h5 {
   color: #46385b;
+}
+
+.code-pidgin-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #362535;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #519498}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
