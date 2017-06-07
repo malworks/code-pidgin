@@ -79,7 +79,9 @@
 
 .c-tab {
   display: none;
-  background-color: #e7e7e7;
+  background-color: #ffffff;
+  border: 1px solid red;
+  margin-bottom: 100px;
 }
 
 .c-tab.is-active {
