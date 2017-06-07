@@ -89,3 +89,5 @@ var myTabs = tabs({
   tabContentContainers: '.c-tab'
 });
 myTabs.init();
+
+console.log("why wont you work take two");
