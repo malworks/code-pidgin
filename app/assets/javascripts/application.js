@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+<<<<<<< HEAD
+=======
+
+console.log("Why wont you work?");
+>>>>>>> frontend
