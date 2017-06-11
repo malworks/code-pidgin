@@ -90,4 +90,4 @@ var myTabs = tabs({
 });
 myTabs.init();
 
-console.log("why wont you work take two");
+console.log("User.js");

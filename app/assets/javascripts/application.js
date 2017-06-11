@@ -18,5 +18,5 @@
 <<<<<<< HEAD
 =======
 
-console.log("Why wont you work?");
+console.log("Applications.js");
 >>>>>>> frontend

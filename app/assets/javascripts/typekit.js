@@ -43,3 +43,4 @@ for(var l=n.fc,q=0;q<l.length;q++)if(l[q].family===a&&l[q].descriptors.weight===
 /*
   End typekit script
 */
+console.log("typekit.js");
