@@ -34,9 +34,20 @@
   </div> -->
 
 
+  <div class="container margin-top">
+    <div class ="user-info">
+      <div class="gravatar-user-show">
+        <%= image_tag @user.avatar_url(300), class: "gravatar" %>
+      </div>
+      <div class="text-info">
+        <h3><%= @user.name %></h3>
+        <h3><%= @user.email %></h3>
+        <p><%= pluralize(@user.articles.count, 'article') %> published</p>
+      </div>
+    </div>
 
-  <div class="container">
-    <div id="tabs" class="no-js">
+
+    <div id="tabs" class="no-js margin-top">
       <div class="c-tabs-nav">
         <a href="#" class="c-tabs-nav__link is-active">
           <i class="fa fa-book"></i>
@@ -67,12 +78,10 @@
           <% @unpublished_articles.each do |article| %>
             <%= render partial: 'articles/article', locals: { article: article } %>
           <% end %>
-          <h2>Awaiting Approval</h2>
         </div>
       </div>
       <div class="c-tab">
         <div class="c-tab__content">
-          <h2>Private Articles</h2>
         </div>
       </div>
       <div class="c-tab">
@@ -177,6 +186,6 @@ var myTabs = tabs({
 });
 myTabs.init();
 
-console.log("why wont you work take two");
+console.log("inline js.");
 
 </script>

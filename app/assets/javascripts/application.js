@@ -15,8 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-<<<<<<< HEAD
-=======
 
 console.log("Applications.js");
->>>>>>> frontend

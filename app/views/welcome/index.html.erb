@@ -1,21 +1,103 @@
 
 <div class="hero">
+  <div class="container">
+    <div class="hero-info padding-top">
+      <div class="definition">
+        <h1>code pidg·in</h1>
+        <small class="def">/kōd/ /ˈpijən/</small><br />
+        <small class="def">noun</small>
+        <ul>
+          <li>
+            denoting a simplified form of language in the form of step by step tutorials and easy to follow articles for Ruby, Rails, the Command Line, HTML, javaScript, jQuery, Angular, TDD, Git, CSS, and SASS
+          </li>
+          <li>
+            a code dictionary.
+          </li>
+        </ul>
+      </div>
+      <div class="sign-up">
+        <div class="user-flex-welcome">
+          <div class="margin-top user-card width-100">
+            <h1>Sign up</h1>
+              <%= form_for @user do |f| %>
+                <% if @user.errors.any? %>
+                  <div class="alert alert-danger">
+                    <h4><%= pluralize(@user.errors.count, "error") %>.</h4>
+                      <ul>
+                        <% @user.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <% end %>
+                      </ul>
+                  </div>
+                <% end %>
+
+              <%= form_group_tag(@user.errors[:name]) do %>
+                <%= f.label :name %>
+                <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
+              <% end %>
+              <%= form_group_tag(@user.errors[:email]) do %>
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
+              <% end %>
+              <%= form_group_tag(@user.errors[:password]) do %>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+              <% end %>
+              <%= form_group_tag(@user.errors[:password_confirmation]) do %>
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
+              <% end %>
+              <div class="form-group">
+                <%= f.submit "Sign up", class: 'btn btn-lg' %>
+              </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 
-<div class="container margin-bottom features">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Solves world hunger</h2>
-      <p>Bloccit will deliver food and water to those in need, all over the world.</p>
+
+
+<div class="container margin-bottom">
+  <div class="welcome-flex margin-top">
+    <div class="features">
+      <span class="feature-img">
+      </span>
+      <div class="feature-text">
+        <h2>Publish articles for the community</h2>
+        <p>Lorem ipsum.</p>
+      </div>
     </div>
-    <div class="col-md-4">
-      <h2>Eliminates poverty</h2>
-      <p>Bloccit will deliver money and education to those in need, all over the world.</p>
+
+    <div class="features">
+      <span class="feature-img">
+      </span>
+      <div class="feature-text">
+        <h2>Browse through dozens of articles</h2>
+        <p>Lorem ipsum.</p>
+      </div>
     </div>
-    <div class="col-md-4">
-      <h2>Makes you better looking</h2>
-      <p>Bloccit will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira.</p>
+
+    <div class="features">
+      <span class="feature-img">
+      </span>
+      <div class="feature-text">
+        <h2>Bookmark your favorite articles by saving them to your favorites</h2>
+        <p>Lorem ipsum.</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <span class="feature-img">
+      </span>
+      <div class="feature-text">
+        <h2>Make private articles only visible to you</h2>
+        <p>Lorem ipsum.</p>
+      </div>
     </div>
   </div>
 </div>
