@@ -1,13 +1,4 @@
-(function() {
 
-  'use strict';
-
-  /**
-   * tabs
-   *
-   * @description The Tabs component.
-   * @param {Object} options The options hash
-   */
   var tabs = function(options) {
 
     var el = document.querySelector(options.el);
@@ -80,14 +71,3 @@
    * Attach to global namespace
    */
   window.tabs = tabs;
-
-})();
-
-var myTabs = tabs({
-  el: '#tabs',
-  tabNavigationLinks: '.c-tabs-nav__link',
-  tabContentContainers: '.c-tab'
-});
-myTabs.init();
-
-console.log("User.js");
