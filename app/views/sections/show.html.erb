@@ -4,7 +4,7 @@
   <%= link_to "Back to Sections", sections_path %>
   <div class="section-show-container margin-bottom">
       <% @published_articles.each do |article| %>
-        <%= render partial: 'articles/article', locals: { article: article } %>
+        <%= render partial: 'articles/article', locals: { article: article, section_name: @section.name } %>
       <% end %>
   </div>
 </div>
