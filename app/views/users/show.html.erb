@@ -52,7 +52,7 @@
       </div>
       <div class="c-tab">
         <div class="c-tab__content">
-          <% if @favorited_articles %>
+          <% if @favorited_articles.any? %>
             <% @favorited_articles.each do |article| %>
               <%= render article %>
             <% end %>

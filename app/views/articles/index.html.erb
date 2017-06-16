@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Articles Awaiting Approval</h3>
     <% @unpublished_articles.each do |article| %>
-      <%= render partial: 'articles/article', locals: { article: article } %>
+      <%= render partial: 'articles/approval', locals: { article: article } %>
     <% end %>
 </div>
