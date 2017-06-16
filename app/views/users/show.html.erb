@@ -52,8 +52,14 @@
       </div>
       <div class="c-tab">
         <div class="c-tab__content">
-          <% @favorited_articles.each do |article| %>
-            <%= render article %>
+          <% if @favorited_articles %>
+            <% @favorited_articles.each do |article| %>
+              <%= render article %>
+            <% end %>
+          <% else %>
+            <p>
+              There are no favorited articles.
+            </p>
           <% end %>
         </div>
       </div>
