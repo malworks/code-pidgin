@@ -5,7 +5,7 @@ class UsersController < ApplicationController
      @unpublished_articles = @articles.where(published: false)
      @published_articles = @articles.where(published: true)
      @favorited_articles = @user.favorited_articles
-
+     @private_articles = @articles.where(private: true)
   end
 
   def new

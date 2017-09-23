@@ -48,6 +48,9 @@
       </div>
       <div class="c-tab">
         <div class="c-tab__content">
+          <% @private_articles.each do |article| %>
+            <%= render article %>
+          <% end %>
         </div>
       </div>
       <div class="c-tab">
