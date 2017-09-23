@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518002311) do
+ActiveRecord::Schema.define(version: 20170923191145) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170518002311) do
     t.datetime "updated_at", null: false
     t.boolean  "published"
     t.integer  "section_id"
+    t.boolean  "private"
     t.index ["section_id"], name: "index_articles_on_section_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
