@@ -5,12 +5,13 @@
       <div class="gravatar-user-show">
         <%= image_tag @user.avatar_url(300), class: "gravatar" %>
       </div>
-      <div class="text-info">
+      <div class="text-about">
         <h3><%= @user.name %></h3>
         <h3><%= @user.email %></h3>
         <p><%= pluralize(@user.articles.count, 'article') %> published</p>
       </div>
     </div>
+
 
 
     <div id="tabs" class="no-js margin-top">
