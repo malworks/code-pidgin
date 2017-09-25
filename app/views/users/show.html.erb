@@ -35,15 +35,27 @@
       </div>
       <div class="c-tab is-active">
         <div class="c-tab__content">
-          <% @published_articles.each do |article| %>
-            <%= render article %>
+          <% if @published_articles.any? %>
+            <% @published_articles.each do |article| %>
+              <%= render article %>
+            <% end %>
+            <% else %>
+              <p>
+                There are no published articles.
+              </p>
           <% end %>
         </div>
       </div>
       <div class="c-tab">
         <div class="c-tab__content">
-          <% @unpublished_articles.each do |article| %>
-            <%= render article %>
+          <% if @unpublished_articles.any? %>
+            <% @unpublished_articles.each do |article| %>
+              <%= render article %>
+            <% end %>
+            <% else %>
+            <p>
+              There are no unpublished articles.
+            </p>
           <% end %>
         </div>
       </div>
@@ -51,6 +63,16 @@
         <div class="c-tab__content">
           <% @private_articles.each do |article| %>
             <%= render article %>
+          <% end %>
+
+          <% if @private_articles.any? %>
+            <% @private_articles.each do |article| %>
+              <%= render article %>
+          <% end %>
+          <% else %>
+            <p>
+              There are no private articles.
+            </p>
           <% end %>
         </div>
       </div>
