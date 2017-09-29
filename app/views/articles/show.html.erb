@@ -17,7 +17,7 @@
           <%= link_to [@article, favorite], method: :delete do %>
             <i class="fa fa-star" aria-hidden="true"></i> Unfavorite
           <% end %>
-        <% else %>
+        <% elsif current_user %>
           <%= link_to [@article, Favorite.new], method: :post do %>
             <i class="fa fa-star-o" aria-hidden="true"></i> Favorite
           <% end %>
