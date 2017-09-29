@@ -2,7 +2,7 @@
   <div class="section-show-card">
   <small>
     <%= image_tag article.user.avatar_url(48), class: "gravatar" %>
-    <%= link_to article.user.name, user_path(article.user_id) %> in <%= article.section.name %><br />
+    <%= link_to article.user.name, user_path(article.user_id) %> in <%= link_to article.section.name, section_path(article.section_id) %><br />
     Published <%= time_ago_in_words(article.created_at) %> ago
   </small>
   <h3 class="clear margin-top">
